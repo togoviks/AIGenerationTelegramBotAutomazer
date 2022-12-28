@@ -2,7 +2,7 @@ package org.example;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
 public class SeleniumProcess {
@@ -10,8 +10,8 @@ public class SeleniumProcess {
     private final Actions actions;
 
     SeleniumProcess() {
-        System.setProperty("webdriver.gecko.driver","F:\\VOsipov\\JavaProjectTests\\AI\\foxdriver\\geckodriver.exe");
-        driver = new FirefoxDriver();
+        System.setProperty("webdriver.chrome.driver","C:\\Users\\Manofest\\IdeaProjects\\BrowserTest\\chromedriver.exe");
+        driver = new ChromeDriver();
         actions = new Actions(driver);
     }
 
@@ -19,8 +19,10 @@ public class SeleniumProcess {
         driver.get("http://127.0.0.1:7860/");
         wait(3000);
         setSettings(prompt);
-        //actions.keyDown(Keys.CONTROL).sendKeys(Keys.RETURN).perform();
+        actions.keyDown(Keys.CONTROL).sendKeys(Keys.ENTER).perform();
     }
+
+
     public void endSession() {
         driver.quit();
     }
@@ -29,8 +31,8 @@ public class SeleniumProcess {
         tabPress(11);
         actions.sendKeys(prompt);
         tabPress(1);
-        actions.sendKeys("neg prompt");
-        tabPress(9);
+        actions.sendKeys("lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts,signature, watermark, username, blurry, artist name, white background, simple background");
+        tabPress(8);
         actions.sendKeys(Keys.NUMPAD5, Keys.NUMPAD0);
         tabPress(3);
         actions.sendKeys(Keys.NUMPAD9, Keys.NUMPAD6, Keys.NUMPAD0);

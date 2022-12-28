@@ -19,10 +19,11 @@ public class Processor{
         SeleniumProcess generate = new SeleniumProcess();
         generate.start(text);
         bot.execute(new SendMessage(id, "Генерация началась"));
-        wait(5000);
-        File photo = new File("F:\\VOsipov\\JavaProjectTests\\AI\\stable-diffusion-webui\\log\\123.png");
+        wait(80000);
+        File photo = new File("F:\\AI\\stable-diffusion-webui\\outputs\\txt2img-images\\1.png");
         bot.execute(new SendPhoto(id, photo));
         generate.endSession();
+
     }
 
     private void wait(int milliseconds) {
