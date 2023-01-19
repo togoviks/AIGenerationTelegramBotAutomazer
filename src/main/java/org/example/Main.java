@@ -2,9 +2,23 @@ package org.example;
 import com.pengrad.telegrambot.TelegramBot;
 import com.pengrad.telegrambot.UpdatesListener;
 
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 public class Main {
     public static void main(String[] args) {
-        TelegramBot bot = new TelegramBot("5895685856:AAHT2hlqoX4iOcncSf3Ad1ivLtiB6G52Rxw");
+
+        String fileContent = "";
+        try {
+            fileContent = Files.readAllLines(Paths.get("C:\\BotToken.txt")).get(0);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        TelegramBot bot = new TelegramBot(fileContent);
 
         Processor processor = new Processor(bot);
 
