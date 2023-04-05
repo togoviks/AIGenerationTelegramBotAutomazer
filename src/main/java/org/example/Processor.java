@@ -24,7 +24,7 @@ public class Processor {
 
         SeleniumProcess generate = new SeleniumProcess();
         generate.start(text);
-        wait(80000);
+        wait(40000);
         File photo = new File("F:\\AI\\stable-diffusion-webui\\outputs\\txt2img-images\\1.png");
         bot.execute(new SendPhoto(id, photo));
         generate.endSession();

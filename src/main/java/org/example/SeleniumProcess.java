@@ -28,20 +28,20 @@ public class SeleniumProcess {
     }
 
     private void setSettings(String prompt) {
-        tabPress(11);
+        tabPress(12);
         actions.sendKeys(prompt);
         tabPress(1);
-        actions.sendKeys("lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts,signature, watermark, username, blurry, artist name, white background, simple background");
+        actions.sendKeys("EasyNegative");
         tabPress(10);
-        actions.sendKeys(Keys.NUMPAD2, Keys.NUMPAD5 );
+        actions.sendKeys(Keys.NUMPAD2, Keys.NUMPAD0 );
         tabPress(2);
-        actions.sendKeys(Keys.NUMPAD2, Keys.NUMPAD5, Keys.NUMPAD6);
+        actions.sendKeys(Keys.NUMPAD5, Keys.NUMPAD1, Keys.NUMPAD2);
         tabPress(2);
-        actions.sendKeys(Keys.NUMPAD3, Keys.NUMPAD2, Keys.NUMPAD0);
-        tabPress(14);
+        actions.sendKeys(Keys.NUMPAD6, Keys.NUMPAD4, Keys.NUMPAD0);
+        tabPress(7);
+        actions.sendKeys(Keys.NUMPAD1, Keys.NUMPAD2);
+        tabPress(8);
         actions.sendKeys(Keys.SPACE).perform();
-        tabPress(6);
-        actions.sendKeys(Keys.NUMPAD4).perform();
     }
 
     private void tabPress(int num) {
